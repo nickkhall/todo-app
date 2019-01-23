@@ -2,7 +2,8 @@ export default {
   moves: {
     alignItems: 'center',
     display: 'flex',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    marginBottom: '10px'
   },
   movesForm: {
     width: '70%'

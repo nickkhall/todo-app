@@ -50,7 +50,7 @@ class Moves extends React.Component {
             value={currentMove}
             onChange={this.handleOnChange}
             onClose={this.toggleMenu}
-            menuProps={{ style: { width: '62%' } }}
+            menuprops={{ style: { width: '62%' } }}
           >
             {
             ['A - 2', 'A - 3', 'A - 4'].map(column => (

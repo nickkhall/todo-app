@@ -1,10 +1,11 @@
 export const initialState = {
-  columnA: [],
-  columnB: [],
-  columnC: [],
-  columnD: [],
-  columnF: [],
-  columnG: []
+  a: [],
+  b: [],
+  c: [],
+  d: [],
+  e: [],
+  f: [],
+  g: []
 };
 
 const reducer = (state = initialState, action) => {
