@@ -13,8 +13,13 @@ import Game from './game';
 // Styles
 import styles from './styles';
 
+const mapStateToProps = state => ({
+  player1: state.playersReducer.player1,
+  player2: state.playersReducer.player2
+});
+
 const mapDispatchToProps = dispatch => ({
   onLoad: () => dispatch(setModal(MODALS_ASSIGN_PLAYERS))
 });
 
-export default connect(null, mapDispatchToProps)(withStyles(styles)(Game));
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(Game));

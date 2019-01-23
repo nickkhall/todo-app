@@ -3,7 +3,8 @@ import { PLAYER_SET_PLAYERS } from 'actions/types';
 
 export const initialState = {
   player1: null,
-  player2: null
+  player2: null,
+  currentPlayer: null
 };
 
 const reducer = (state = initialState, action) => {
