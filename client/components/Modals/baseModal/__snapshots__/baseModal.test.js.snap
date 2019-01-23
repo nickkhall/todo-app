@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Modal /> component when rendering should render a component matching the snapshot 1`] = `
+<WithStyles(Dialog)
+  aria-describedby="alert-dialog-description"
+  aria-labelledby="alert-dialog-title"
+  disableBackdropClick={true}
+  fullWidth={true}
+  maxWidth="sm"
+  onExiting={[MockFunction]}
+  open={true}
+  scroll="paper"
+  style={
+    Object {
+      "padding": 0,
+    }
+  }
+>
+  <WithStyles(DialogTitle)>
+    Mock Title
+  </WithStyles(DialogTitle)>
+  <div>
+    Hello Modal!
+  </div>
+</WithStyles(Dialog)>
+`;

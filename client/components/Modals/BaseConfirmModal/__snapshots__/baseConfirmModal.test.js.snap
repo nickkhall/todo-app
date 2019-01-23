@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BaseConfirmModal /> when rendering should render a component matching the snapshot 1`] = `
+<Connect(Modal)
+  closeModal={[MockFunction]}
+>
+  <WithStyles(DialogContent) />
+  <WithStyles(DialogActions)>
+    <CancelButton
+      action={[Function]}
+    />
+    <SaveButton
+      action={[Function]}
+    />
+  </WithStyles(DialogActions)>
+</Connect(Modal)>
+`;

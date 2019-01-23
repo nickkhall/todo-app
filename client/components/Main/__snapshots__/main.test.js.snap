@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Main /> component when rendering should render a component matching the snapshot 1`] = `
+<main>
+  <div />
+  <p
+    key="One"
+  >
+    One
+  </p>
+  <p
+    key="Two"
+  >
+    Two
+  </p>
+</main>
+`;
