@@ -1,11 +1,12 @@
 export const initialState = {
-  a: [],
-  b: [],
-  c: [],
-  d: [],
-  e: [],
-  f: [],
-  g: []
+  board: [
+    { column: [null, null, null, null, null, null, null] },
+    { column: [null, null, null, null, null, null, null] },
+    { column: [null, null, null, null, null, null, null] },
+    { column: [null, null, null, null, null, null, null] },
+    { column: [null, null, null, null, null, null, null] },
+    { column: [null, null, null, null, null, null, null] }
+  ]
 };
 
 const reducer = (state = initialState, action) => {
