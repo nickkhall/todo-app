@@ -1,6 +1,6 @@
 // MUI
 import { createMuiTheme } from '@material-ui/core/styles';
-import red from '@material-ui/core/colors/red';
+import green from '@material-ui/core/colors/green';
 
 /**
  * The theme provider for the app.
@@ -11,14 +11,14 @@ import red from '@material-ui/core/colors/red';
 const theme = createMuiTheme({
   palette: {
     primary: {
-      light: red[300],
-      main: red[500],
-      dark: red[700]
+      light: green[300],
+      main: green[500],
+      dark: green[700]
     },
     secondary: {
-      light: red.A200,
-      main: red.A400,
-      dark: red.A700
+      light: green.A200,
+      main: green.A400,
+      dark: green.A700
     }
   }
 });

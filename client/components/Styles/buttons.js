@@ -11,10 +11,6 @@ export default {
       background: red[700]
     }
   },
-  btnActivate: {
-    background: 'transparent',
-    border: '2px solid #aaa'
-  },
   disabled: {
     background: `${grey[200]} !important`,
     margin: '0 5px'
@@ -22,12 +18,6 @@ export default {
   icon: {
     color: red[500],
     fontSize: 30,
-    '&:hover': {
-      cursor: 'pointer'
-    }
-  },
-  trashIcon: {
-    color: '#000',
     '&:hover': {
       cursor: 'pointer'
     }

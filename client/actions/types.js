@@ -1,5 +1,5 @@
 // Game
-export const GAME_SET_PLAYERS = 'GAME_SET_PLAYERS';
+export const PLAYER_SET_PLAYERS = 'PLAYER_SET_PLAYERS';
 
 // Modals
 export const MODAL_CLOSE_MODAL = 'MODAL_CLOSE_MODAL';
