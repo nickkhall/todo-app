@@ -20,7 +20,7 @@ const Game = ({ player1, player2, onLoad }) => {
           </ContentSection>
         )
       }
-      <AssignPlayersModal />
+      { !player1 && !player2 && <AssignPlayersModal /> }
     </PageWrapper>
   );
 };

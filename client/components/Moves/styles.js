@@ -3,5 +3,8 @@ export default {
     alignItems: 'center',
     display: 'flex',
     justifyContent: 'space-between'
+  },
+  movesForm: {
+    width: '50%'
   }
 };
