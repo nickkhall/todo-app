@@ -5,6 +5,15 @@ export default {
     justifyContent: 'space-between'
   },
   movesForm: {
-    width: '50%'
+    width: '70%'
+  },
+  movesSubmitBtn: {
+    display: 'inline-block'
+  },
+  movesFormSelect: {
+    width: '100%'
+  },
+  movesFormSelectItem: {
+    width: '62%'
   }
 };

@@ -2,8 +2,9 @@ import React from 'react';
 
 // MUI Components
 import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
 import MenuItem from '@material-ui/core/MenuItem';
-import FormControl from '@material-ui/core/FormControl';
+import FormGroup from '@material-ui/core/FormGroup';
 import Select from '@material-ui/core/Select';
 
 class Moves extends React.Component {
@@ -25,7 +26,10 @@ class Moves extends React.Component {
   }
 
   handleOnChange({ target: { value } }) {
-    console.log({ value });
+    this.setState({
+      currentMove: value,
+      isOpen: false
+    });
   }
 
   render() {
@@ -34,27 +38,35 @@ class Moves extends React.Component {
 
     return (
       <section className={classes.moves}>
-        <Typography variant="title">Choose Your Next Move</Typography>
-        <FormControl className={classes.movesForm}>
+        <Typography>Choose Your Move: </Typography>
+        <FormGroup
+          className={classes.movesForm}
+          row
+        >
           <Select
+            className={classes.movesFormSelect}
             open={isOpen}
             onOpen={this.toggleMenu}
             value={currentMove}
+            onChange={this.handleOnChange}
             onClose={this.toggleMenu}
+            menuProps={{ style: { width: '62%' } }}
           >
             {
-              ['A - 2', 'A - 3', 'A - 4'].map(column => (
-                <MenuItem
-                  key={column}
-                  value={column}
-                  onClick={this.handleOnChange}
-                >
-                  { column }
-                </MenuItem>
-              ))
-            }
+            ['A - 2', 'A - 3', 'A - 4'].map(column => (
+              <MenuItem
+                key={column}
+                value={column}
+              >
+                { column }
+              </MenuItem>
+            ))
+          }
           </Select>
-        </FormControl>
+        </FormGroup>
+        <Button className={classes.movesSubmitBtn} onClick={this.handleSubmit} type="submit">
+          Submit
+        </Button>
       </section>
     );
   }
