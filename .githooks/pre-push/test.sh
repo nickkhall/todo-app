@@ -1,0 +1,14 @@
+#!/bin/sh
+
+yarn run test-eslint
+RESULT=$?
+[ RESULT -ne 0 ] && exit 1
+
+yarn run test-jest
+RESULT=$?
+[ RESULT -ne 0 ] && exit 1
+
+yarn run test-scsslint
+RESULT=$?
+[ RESULT -ne 0 ] && exit 1
+exit 0

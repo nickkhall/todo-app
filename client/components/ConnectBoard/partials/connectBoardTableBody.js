@@ -12,9 +12,7 @@ const ConnectBoardTableBody = ({ board }) => (
         <TableRow>
           {
               column.map(c => (
-                <TableCell key={c}>
-                  { c }
-                </TableCell>
+                <TableCell key={c}>{ c }</TableCell>
               ))
             }
         </TableRow>
