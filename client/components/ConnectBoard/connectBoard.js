@@ -9,59 +9,23 @@ import TableCell from '@material-ui/core/TableCell';
 // Components
 import ConnectBoardTableBody from './partials/connectBoardTableBody';
 
+const columnArr = ['A', 'B', 'C', 'D', 'E', 'F', 'G'];
+
 const ConnectBoard = ({ classes, board, onColumnClick }) => (
   <Table>
     <TableHead>
       <TableRow>
-        <TableCell
-          colSpan={1}
-          className={classes.column}
-          onClick={({ currentTarget: { innerText } }) => onColumnClick(innerText)}
-        >
-          A
-        </TableCell>
-        <TableCell
-          colSpan={1}
-          className={classes.column}
-          onClick={({ currentTarget: { innerText } }) => onColumnClick(innerText)}
-        >
-          B
-        </TableCell>
-        <TableCell
-          colSpan={1}
-          className={classes.column}
-          onClick={({ currentTarget: { innerText } }) => onColumnClick(innerText)}
-        >
-          C
-        </TableCell>
-        <TableCell
-          colSpan={1}
-          className={classes.column}
-          onClick={({ currentTarget: { innerText } }) => onColumnClick(innerText)}
-        >
-          D
-        </TableCell>
-        <TableCell
-          colSpan={1}
-          className={classes.column}
-          onClick={({ currentTarget: { innerText } }) => onColumnClick(innerText)}
-        >
-          E
-        </TableCell>
-        <TableCell
-          colSpan={1}
-          className={classes.column}
-          onClick={({ currentTarget: { innerText } }) => onColumnClick(innerText)}
-        >
-          F
-        </TableCell>
-        <TableCell
-          colSpan={1}
-          className={classes.column}
-          onClick={({ currentTarget: { innerText } }) => onColumnClick(innerText)}
-        >
-          G
-        </TableCell>
+        {
+          columnArr.map(c => (
+            <TableCell
+              colSpan={1}
+              className={classes.column}
+              onClick={({ currentTarget: { innerText } }) => onColumnClick(innerText)}
+            >
+              { c }
+            </TableCell>
+          ))
+        }
       </TableRow>
     </TableHead>
     <ConnectBoardTableBody board={board} />
