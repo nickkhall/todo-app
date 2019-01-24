@@ -16,6 +16,7 @@ class Moves extends React.Component {
     };
 
     this.toggleMenu = this.toggleMenu.bind(this);
+    this.handleOnChange = this.handleOnChange.bind(this);
   }
 
   toggleMenu() {

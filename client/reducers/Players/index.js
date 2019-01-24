@@ -13,7 +13,8 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         player1: action.payload.player1,
-        player2: action.payload.player2
+        player2: action.payload.player2,
+        currentPlayer: action.payload.currentPlayer
       };
     default:
       return state;

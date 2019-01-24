@@ -17,18 +17,14 @@ export const initialState = {
 };
 
 const generateBoard = ({ move, currentPlayer }, board) => {
-  const column = move.charCodeAt(0) - 97;
+  const column = move.toLowerCase().charCodeAt(0) - 97;
 
-  return board.map((r, i) => {
-    if (column === i) {
-      return r.map((c) => {
-        c.push(currentPlayer);
-        return c;
-      });
+  return board.map(r => r.map((c) => {
+    if (column === c) {
+      c.push(currentPlayer);
     }
-
-    return r;
-  });
+    return c;
+  }));
 };
 
 const reducer = (state = initialState, action) => {
@@ -36,7 +32,7 @@ const reducer = (state = initialState, action) => {
     case BOARD_ADD_PIECE:
       return {
         ...state,
-        ...generateBoard(action.payload, state.board)
+        board: generateBoard(action.payload, state.board)
       };
     default:
       return state;

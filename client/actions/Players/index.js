@@ -15,7 +15,8 @@ export const setPlayers = player1Color => (dispatch) => {
     type: PLAYER_SET_PLAYERS,
     payload: {
       player1: player1Color,
-      player2: player2Color
+      player2: player2Color,
+      currentPlayer: player1Color
     }
   });
 };
