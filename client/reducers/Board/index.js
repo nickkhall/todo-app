@@ -1,5 +1,5 @@
 // Action Types
-import { PLAYER_MOVE } from 'actions/types';
+import { BOARD_ADD_PIECE } from 'actions/types';
 
 const rows = Array(6).fill(null);
 const columns = 'abcdefg'.split('');
@@ -14,7 +14,7 @@ const initialState = columns.reduce((o, k) => ({
 
 const boardReducer = (state = initialState, action) => {
   switch (action.type) {
-    case PLAYER_MOVE:
+    case BOARD_ADD_PIECE:
       return {
         ...state,
         [action.payload.coordinate]: action.payload.color
