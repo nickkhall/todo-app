@@ -1,6 +1,7 @@
 // Action Types
 import {
-  PLAYER_SET_PLAYERS
+  PLAYER_SET_PLAYERS,
+  PLAYER_CHANGE_PLAYER
 } from 'actions/types';
 
 /**
@@ -18,5 +19,18 @@ export const setPlayers = player1Color => (dispatch) => {
       player2: player2Color,
       currentPlayer: player1Color
     }
+  });
+};
+
+/**
+ * Changes the current Players color. Changes who's turn it is to make a move.
+ */
+export const changePlayers = () => (dispatch, getAppState) => {
+  const { playersReducer: { currentPlayer } } = getAppState();
+  const newPlayer = currentPlayer === 'yellow' ? 'green' : 'yellow';
+
+  return dispatch({
+    type: PLAYER_CHANGE_PLAYER,
+    payload: newPlayer
   });
 };

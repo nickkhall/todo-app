@@ -1,5 +1,7 @@
 // Action Types
-import { GAME_END_GAME } from 'actions/types';
+import {
+  GAME_END_GAME
+} from 'actions/types';
 
 /**
  * Ends the game. Plain and simple.

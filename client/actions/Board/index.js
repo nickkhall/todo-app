@@ -1,5 +1,8 @@
 // Action Types
-import { PLAYER_MOVE } from 'actions/types';
+import { BOARD_ADD_PIECE } from 'actions/types';
+
+// Actions
+import { changePlayers } from 'actions/Players';
 
 export const addPiece = coordinate => (dispatch, getAppState) => {
   const {
@@ -12,11 +15,13 @@ export const addPiece = coordinate => (dispatch, getAppState) => {
   const topCell = cells.find(k => !!board[k]) || [0, 7];
   const coord = `${column}${parseInt(topCell[1], 10) - 1}`;
 
-  return dispatch({
-    type: PLAYER_MOVE,
+  dispatch({
+    type: BOARD_ADD_PIECE,
     payload: {
       coordinate: coord,
       color: currentPlayer
     }
   });
+
+  return dispatch(changePlayers());
 };
