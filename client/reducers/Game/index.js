@@ -1,7 +1,5 @@
 export const initialState = {
-  gameOver: false,
-  playersMove: null,
-  playStack: []
+  gameOver: false
 };
 
 const reducer = (state = initialState, action) => {

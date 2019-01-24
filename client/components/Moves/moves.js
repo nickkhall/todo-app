@@ -12,12 +12,10 @@ class Moves extends React.Component {
     super(props);
 
     this.state = {
-      isOpen: false,
-      currentMove: ''
+      isOpen: false
     };
 
     this.toggleMenu = this.toggleMenu.bind(this);
-    this.handleOnChange = this.handleOnChange.bind(this);
   }
 
   toggleMenu() {
@@ -26,15 +24,15 @@ class Moves extends React.Component {
   }
 
   handleOnChange({ target: { value } }) {
-    this.setState({
-      currentMove: value,
-      isOpen: false
-    });
+    const { onSave } = this.props;
+    if (value) {
+      onSave(value);
+    }
   }
 
   render() {
-    const { isOpen, currentMove } = this.state;
-    const { classes } = this.props;
+    const { isOpen } = this.state;
+    const { classes, playersMove } = this.props;
 
     return (
       <section className={classes.moves}>
@@ -47,13 +45,13 @@ class Moves extends React.Component {
             className={classes.movesFormSelect}
             open={isOpen}
             onOpen={this.toggleMenu}
-            value={currentMove}
+            value={playersMove}
             onChange={this.handleOnChange}
             onClose={this.toggleMenu}
             menuprops={{ style: { width: '62%' } }}
           >
             {
-            ['A - 2', 'A - 3', 'A - 4'].map(column => (
+            ['A', 'B', 'C', 'D', 'E', 'F', 'G'].map(column => (
               <MenuItem
                 key={column}
                 value={column}
