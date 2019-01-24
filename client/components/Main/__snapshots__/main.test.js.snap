@@ -2,7 +2,6 @@
 
 exports[`<Main /> component when rendering should render a component matching the snapshot 1`] = `
 <main>
-  <div />
   <p
     key="One"
   >

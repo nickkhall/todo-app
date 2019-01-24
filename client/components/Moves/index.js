@@ -10,8 +10,12 @@ import styles from './styles';
 // Components
 import Moves from './moves';
 
+const mapStateToProps = state => ({
+  playersMove: state.boardReducer.playersMove
+});
+
 const mapDispatchToProps = dispatch => ({
   onSave: (...args) => dispatch(addPiece(...args))
 });
 
-export default connect(null, mapDispatchToProps)(withStyles(styles)(Moves));
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(Moves));

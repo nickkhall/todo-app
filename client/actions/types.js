@@ -7,3 +7,6 @@ export const MODAL_SET_MODAL = 'MODAL_SET_MODAL';
 
 // Board
 export const BOARD_ADD_PIECE = 'BOARD_ADD_PIECE';
+
+// Game
+export const GAME_END_GAME = 'GAME_END_GAME';
