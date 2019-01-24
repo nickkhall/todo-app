@@ -1,14 +1,20 @@
+// Action Types
+import { GAME_END_GAME } from 'actions/types';
+
 export const initialState = {
-  gameOver: false,
-  playersMove: null,
-  playStack: []
+  gameOver: false
 };
 
-const reducer = (state = initialState, action) => {
+const gameReducer = (state = initialState, action) => {
   switch (action.type) {
+    case GAME_END_GAME:
+      return {
+        ...state,
+        gameOver: true
+      };
     default:
       return state;
   }
 };
 
-export default reducer;
+export default gameReducer;
