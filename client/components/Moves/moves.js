@@ -2,7 +2,6 @@ import React from 'react';
 
 // MUI Components
 import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormGroup from '@material-ui/core/FormGroup';
 import Select from '@material-ui/core/Select';
@@ -63,9 +62,6 @@ class Moves extends React.Component {
           }
           </Select>
         </FormGroup>
-        <Button className={classes.movesSubmitBtn} onClick={this.handleSubmit} type="submit">
-          Submit
-        </Button>
       </section>
     );
   }

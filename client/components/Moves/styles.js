@@ -15,6 +15,6 @@ export default {
     width: '100%'
   },
   movesFormSelectItem: {
-    width: '62%'
+    width: '70%'
   }
 };

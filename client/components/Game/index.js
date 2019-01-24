@@ -15,7 +15,8 @@ import styles from './styles';
 
 const mapStateToProps = state => ({
   player1: state.playersReducer.player1,
-  player2: state.playersReducer.player2
+  player2: state.playersReducer.player2,
+  currentPlayer: state.playersReducer.currentPlayer
 });
 
 const mapDispatchToProps = dispatch => ({
