@@ -1,6 +1,9 @@
 import { connect } from 'react-redux';
 import { withStyles } from '@material-ui/core/styles';
 
+// Actions
+import { addPiece } from 'actions/Board';
+
 // Components
 import ConnectBoard from './connectBoard';
 
@@ -11,4 +14,8 @@ const mapStateToProps = state => ({
   board: state.boardReducer
 });
 
-export default connect(mapStateToProps, null)(withStyles(styles)(ConnectBoard));
+const mapDispatchToProps = dispatch => ({
+  onColumnClick: (...args) => dispatch(addPiece(...args))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(ConnectBoard));
