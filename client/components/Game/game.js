@@ -26,8 +26,8 @@ const Game = ({
         Current Player:
         <em className={classes[currentPlayer]}>{ currentPlayer && `${currentPlayer.substring(0, 1).toUpperCase()}${currentPlayer.substring(1)}` }</em>
       </Typography>
-      { player1 && player2 && <Board /> }
       { !player1 && !player2 && <AssignPlayersModal /> }
+      { player1 && player2 && <Board /> }
     </PageWrapper>
   );
 };

@@ -8,25 +8,23 @@ import TableRow from '@material-ui/core/TableRow';
 // Components
 import Piece from 'components/Piece';
 
-const ConnectBoardTableBody = ({ board }) => {
-  console.log({ board });
-  return (
-    <TableBody>
-      {
-        board.map(r => (
-          <TableRow key={Math.random() * (150 - 1) + 1}>
-            {
-                r.map(c => (
-                  <TableCell key={Math.random() * (50 - 1) + 1}>
-                    <Piece color={c} />
-                  </TableCell>
-                ))
-              }
-          </TableRow>
-        ))
-      }
-    </TableBody>
-  );
-};
+const rows = Array(6).fill(null);
+const columns = 'abcdefg'.split('');
+
+const ConnectBoardTableBody = ({ board }) => (
+  <TableBody>
+    {
+      rows.map((r, rI) => (
+        <TableRow key={`${r}${rI + 1}`}>
+          { columns.map(c => (
+            <TableCell key={`${c}${rI + 1}`}>
+              <Piece color={board[`${c}${rI + 1}`]} />
+            </TableCell>
+          )) }
+        </TableRow>
+      ))
+    }
+  </TableBody>
+);
 
 export default ConnectBoardTableBody;

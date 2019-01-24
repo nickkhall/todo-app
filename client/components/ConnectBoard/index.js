@@ -8,7 +8,7 @@ import ConnectBoard from './connectBoard';
 import styles from './styles';
 
 const mapStateToProps = state => ({
-  board: state.boardReducer.board
+  board: state.boardReducer
 });
 
 export default connect(mapStateToProps, null)(withStyles(styles)(ConnectBoard));

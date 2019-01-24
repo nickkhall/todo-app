@@ -1,15 +1,14 @@
 // Action Types
-import { BOARD_ADD_PIECE } from 'actions/types';
+import { PLAYER_MOVE } from 'actions/types';
 
-
-export const addPiece = move => (dispatch, getAppState) => {
+export const addPiece = coordinate => (dispatch, getAppState) => {
   const { playersReducer: { currentPlayer } } = getAppState();
 
-  dispatch({
-    type: BOARD_ADD_PIECE,
+  return dispatch({
+    type: PLAYER_MOVE,
     payload: {
-      currentPlayer,
-      playersMove: move
+      coordinate,
+      color: currentPlayer
     }
   });
 };

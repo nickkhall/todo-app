@@ -1,5 +1,6 @@
 // Players
 export const PLAYER_SET_PLAYERS = 'PLAYER_SET_PLAYERS';
+export const PLAYER_MOVE = 'PLAYER_MOVE';
 
 // Modals
 export const MODAL_CLOSE_MODAL = 'MODAL_CLOSE_MODAL';
