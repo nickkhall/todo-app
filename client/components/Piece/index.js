@@ -1,4 +1,9 @@
+import { withStyles } from '@material-ui/core/styles';
+
 // Components
 import Piece from './piece';
 
-export default Piece;
+// Styles
+import styles from './styles';
+
+export default withStyles(styles)(Piece);

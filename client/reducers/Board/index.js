@@ -1,11 +1,12 @@
 export const initialState = {
   board: [
-    { column: [null, null, null, null, null, null, null] },
-    { column: [null, null, null, null, null, null, null] },
-    { column: [null, null, null, null, null, null, null] },
-    { column: [null, null, null, null, null, null, null] },
-    { column: [null, null, null, null, null, null, null] },
-    { column: [null, null, null, null, null, null, null] }
+    [null, null, null, null, null, null],
+    [null, null, null, null, null, null],
+    [null, null, null, null, null, null],
+    [null, null, null, null, null, null],
+    [null, null, null, null, null, null],
+    ['green', null, null, null, null, null],
+    ['yellow', null, null, null, null, null]
   ]
 };
 
