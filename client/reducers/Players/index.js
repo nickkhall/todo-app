@@ -7,7 +7,7 @@ export const initialState = {
   currentPlayer: null
 };
 
-const reducer = (state = initialState, action) => {
+const playersReducer = (state = initialState, action) => {
   switch (action.type) {
     case PLAYER_SET_PLAYERS:
       return {
@@ -21,4 +21,4 @@ const reducer = (state = initialState, action) => {
   }
 };
 
-export default reducer;
+export default playersReducer;

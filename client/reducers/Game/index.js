@@ -5,7 +5,7 @@ export const initialState = {
   gameOver: false
 };
 
-const reducer = (state = initialState, action) => {
+const gameReducer = (state = initialState, action) => {
   switch (action.type) {
     case GAME_END_GAME:
       return {
@@ -17,4 +17,4 @@ const reducer = (state = initialState, action) => {
   }
 };
 
-export default reducer;
+export default gameReducer;
