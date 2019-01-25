@@ -9,5 +9,9 @@ export default {
   green: {
     background: green[500],
     padding: '4px'
+  },
+  clear: {
+    background: 'transparent',
+    padding: '4px'
   }
 };

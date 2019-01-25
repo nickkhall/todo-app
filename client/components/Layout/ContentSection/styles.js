@@ -4,7 +4,7 @@ export default theme => ({
     padding: theme.spacing.unit * 2,
     textAlign: 'left',
     color: theme.palette.text.secondary,
-    maxWidth: '700px',
+    maxWidth: '900px',
     [theme.breakpoints.up('sm')]: {
       minWidth: '400px'
     }
