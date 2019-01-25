@@ -1,7 +1,8 @@
 // Action Types
 import {
   PLAYER_SET_PLAYERS,
-  PLAYER_CHANGE_PLAYER
+  PLAYER_CHANGE_PLAYER,
+  GAME_RESET_GAME
 } from 'actions/types';
 
 export const initialState = {
@@ -23,6 +24,12 @@ const playersReducer = (state = initialState, action) => {
       return {
         ...state,
         currentPlayer: action.payload
+      };
+    case GAME_RESET_GAME:
+      return {
+        player1: null,
+        player2: null,
+        currentPlayer: null
       };
     default:
       return state;

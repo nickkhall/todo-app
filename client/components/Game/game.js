@@ -7,13 +7,15 @@ import Typography from '@material-ui/core/Typography';
 import PageWrapper from 'components/PageWrapper';
 import Board from 'components/Board';
 import AssignPlayersModal from 'components/Modals/Players/AssignPlayers';
+import ResetGameModal from 'components/Modals/Game/ResetGame';
 
 const Game = ({
   classes,
   player1,
   player2,
   currentPlayer,
-  onLoad
+  onLoad,
+  gameOver
 }) => {
   if (!player1 || !player2) {
     onLoad();
@@ -21,9 +23,10 @@ const Game = ({
 
   return (
     <PageWrapper>
-      { !player1 && !player2 && <AssignPlayersModal /> }
+      { gameOver && player1 && player2 && <ResetGameModal /> }
+      { !player1 && !player2 && !gameOver && <AssignPlayersModal /> }
       {
-        player1 && player2 && (
+        player1 && player2 && !gameOver && (
           <div>
             <Typography variant="display1">Connect Four</Typography>
             <Typography variant="title">
