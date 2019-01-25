@@ -13,17 +13,18 @@ const Game = ({
   player1,
   player2,
   currentPlayer,
-  onLoad
+  onLoad,
+  gameOver
 }) => {
-  if (!player1 || !player2) {
+  if (gameOver || !player1 || !player2) {
     onLoad();
   }
 
   return (
     <PageWrapper>
-      { !player1 && !player2 && <AssignPlayersModal /> }
+      { (gameOver || (!player1 && !player2)) && <AssignPlayersModal /> }
       {
-        player1 && player2 && (
+        player1 && player2 && !gameOver && (
           <div>
             <Typography variant="display1">Connect Four</Typography>
             <Typography variant="title">
