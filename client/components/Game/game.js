@@ -7,6 +7,7 @@ import Typography from '@material-ui/core/Typography';
 import PageWrapper from 'components/PageWrapper';
 import Board from 'components/Board';
 import AssignPlayersModal from 'components/Modals/Players/AssignPlayers';
+import ResetGameModal from 'components/Modals/Game/ResetGame';
 
 const Game = ({
   classes,
@@ -22,7 +23,8 @@ const Game = ({
 
   return (
     <PageWrapper>
-      { (gameOver || (!player1 && !player2)) && <AssignPlayersModal /> }
+      { gameOver && <ResetGameModal /> }
+      { !player1 && !player2 && !gameOver && <AssignPlayersModal /> }
       {
         player1 && player2 && !gameOver && (
           <div>
