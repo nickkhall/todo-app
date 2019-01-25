@@ -21,7 +21,7 @@ const ResetGameModal = ({
     autoScrollBodyContent
   >
     <Typography className={classes.resetGameTitle} variant="display2">
-          Congratulations!
+      Congratulations!
     </Typography>
     <div className={classes.resetGameTextGroup}>
       <Typography className={classes[winnerColor]} variant="display1">
@@ -30,13 +30,13 @@ const ResetGameModal = ({
       <Typography variant="display1">is the winner!</Typography>
     </div>
     <Typography className={classes.resetGameText} variant="title">
-          Please restart the game to play again.
+      Please restart the game to play again.
     </Typography>
     <Button
       className={classes.resetRestartBtn}
       onClick={onSave}
     >
-          Restart
+      Restart
     </Button>
   </BaseModal>
 );
