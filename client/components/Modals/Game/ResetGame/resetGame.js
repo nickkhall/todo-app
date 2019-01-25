@@ -10,25 +10,33 @@ import BaseModal from 'components/Modals/baseModal';
 // Constants
 import { MODALS_RESET_GAME } from 'copy/Components/modals';
 
-const ResetGameModal = ({ winner, onSave }) => (
+const ResetGameModal = ({
+  classes,
+  winner,
+  winnerColor,
+  onSave
+}) => (
   <BaseModal
-    title="WINNER!"
     name={MODALS_RESET_GAME}
     autoScrollBodyContent
   >
-    <Typography variant="display2">
-      Congratulations!
+    <Typography className={classes.resetGameTitle} variant="display2">
+          Congratulations!
     </Typography>
-    <Typography variant="display1">
-      { winner && winner }
-      {' '}
-      is the winner!
+    <div className={classes.resetGameTextGroup}>
+      <Typography className={classes[winnerColor]} variant="display1">
+        { winner && winner }
+      </Typography>
+      <Typography variant="display1">is the winner!</Typography>
+    </div>
+    <Typography className={classes.resetGameText} variant="title">
+          Please restart the game to play again.
     </Typography>
-    <Typography variant="title">
-      Please reset the game to play again.
-    </Typography>
-    <Button onClick={onSave}>
-      Restart
+    <Button
+      className={classes.resetRestartBtn}
+      onClick={onSave}
+    >
+          Restart
     </Button>
   </BaseModal>
 );
