@@ -1,22 +1,20 @@
 import React from 'react';
 
 // MUI Components
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
+import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
 // Components
-import BaseConfirmModal from 'components/Modals/BaseConfirmModal';
+import BaseModal from 'components/Modals/baseModal';
 
 // Constants
 import { MODALS_RESET_GAME } from 'copy/Components/modals';
 
 const ResetGameModal = ({ winner, onSave }) => (
-  <BaseConfirmModal
+  <BaseModal
     title="WINNER!"
     name={MODALS_RESET_GAME}
     autoScrollBodyContent
-    saveButtonAction={onSave}
   >
     <Typography variant="display2">
       Congratulations!
@@ -29,7 +27,10 @@ const ResetGameModal = ({ winner, onSave }) => (
     <Typography variant="title">
       Please reset the game to play again.
     </Typography>
-  </BaseConfirmModal>
+    <Button onClick={onSave}>
+      Restart
+    </Button>
+  </BaseModal>
 );
 
 export default ResetGameModal;

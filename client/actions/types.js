@@ -11,3 +11,4 @@ export const BOARD_ADD_PIECE = 'BOARD_ADD_PIECE';
 
 // Game
 export const GAME_END_GAME = 'GAME_END_GAME';
+export const GAME_RESET_GAME = 'GAME_RESET_GAME';

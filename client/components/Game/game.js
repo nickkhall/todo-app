@@ -17,13 +17,13 @@ const Game = ({
   onLoad,
   gameOver
 }) => {
-  if (gameOver || !player1 || !player2) {
+  if (!player1 || !player2) {
     onLoad();
   }
 
   return (
     <PageWrapper>
-      { gameOver && <ResetGameModal /> }
+      { gameOver && player1 && player2 && <ResetGameModal /> }
       { !player1 && !player2 && !gameOver && <AssignPlayersModal /> }
       {
         player1 && player2 && !gameOver && (

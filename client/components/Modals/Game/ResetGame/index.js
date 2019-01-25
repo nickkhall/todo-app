@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { resetGame } from 'actions/Game';
 
 // Components
-import RestGameModal from './resetGame';
+import ResetGameModal from './resetGame';
 
 const mapStateToProps = state => ({
   winner: state.playersReducer.winner
