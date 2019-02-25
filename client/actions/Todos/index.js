@@ -4,9 +4,9 @@ import { getTodos } from 'services/todos';
 // Action Types
 import { TODOS_GET } from '../types';
 
-export const getAllTodos = () => (dispatch) => {
-  console.log('get all todos action ran');
-  return getTodos()
+export const getAllTodos = () => (dispatch) =>
+  getTodos()
+		.then(res => res.data)
     .then(todos => dispatch({
       type: TODOS_GET,
       payload: todos
@@ -15,4 +15,3 @@ export const getAllTodos = () => (dispatch) => {
       // @TODO: Implement Notifications
       console.error(err); // Temporary
     });
-};

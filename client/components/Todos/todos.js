@@ -7,6 +7,7 @@ import Typography from '@material-ui/core/Typography';
 import PageWrapper from 'components/PageWrapper';
 import CenteredContent from 'components/Layout/CenteredContent';
 import Loader from 'components/Loading';
+import Todo from 'components/Todo';
 
 class Todos extends React.Component {
 	componentDidMount() {
@@ -24,7 +25,7 @@ class Todos extends React.Component {
 				<CenteredContent>
 					<Typography variant="display1">Todos</Typography>
 					{
-						todos.map(t => <Todo {...t} />)
+						todos.map(t => <Todo key={t.id} {...t} />)
 					}
 				</CenteredContent>
 			</PageWrapper>

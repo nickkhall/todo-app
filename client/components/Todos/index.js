@@ -9,10 +9,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  onLoad: () => {
-    console.log('mapDispatchToProps onLoad was called, now dispatching getAllTodos');
-    return dispatch(getAllTodos());
-  }
+  onLoad: () => dispatch(getAllTodos())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Todos);
