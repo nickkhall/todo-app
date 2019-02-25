@@ -13,7 +13,7 @@ import CreateTodoModal from 'components/Modals/Todo/create';
 
 class Todos extends React.Component {
 	componentDidMount() {
-	  if (!this.props.todos) {
+		if (!this.props.todos) {
 			this.props.onLoad();
 		}
 	}
