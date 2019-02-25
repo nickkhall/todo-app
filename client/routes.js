@@ -1,5 +1,5 @@
 // Route components
-import Game from 'components/Game';
+import Todos from 'components/Todos';
 import NotFound from 'components/NotFound';
 
 // Constants
@@ -19,7 +19,7 @@ const exact = true;
 const ROUTES_CONFIG = [
   {
     path: ROUTEPATH_DEFAULT_PAGE,
-    component: Game,
+    component: Todos,
     exact
   },
 
