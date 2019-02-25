@@ -5,7 +5,7 @@ import grey from '@material-ui/core/colors/grey';
 
 export default {
 	todo: {
-		background: grey[200],
+		background: grey[100],
 		display: 'flex',
 		justifyContent: 'center',
 		flexDirection: 'column',
@@ -21,7 +21,7 @@ export default {
 		textOverflow: 'ellipsis',
 		overflow: 'hidden',
 		whiteSpace: 'nowrap',
-		maxWidth: '400px'
+		maxWidth: '550px'
 	},
 	completed: {
 		color: green[500]
