@@ -1,4 +1,9 @@
-# Connect Four
+# Todo Application
+----
+
+## This is your basic todo application.
+## This is supposed to demonstrate my current React / Redux capabilities, and showcase my first GoLang api.
+
 ----
 
 ## Running the application:
@@ -16,6 +21,3 @@ npm install -g yarn
 ```
 npm install && npm run start
 ```
-
-## Rules:
-### Rules of Connect Four, it's that simple.
