@@ -12,12 +12,12 @@ import {
  */
 export const setModal = (modalName, modalProps) => dispatch =>
 	dispatch({
-    type: MODAL_SET_MODAL,
-    payload: {
-      modalName,
-      modalProps
-    }
-  });
+		type: MODAL_SET_MODAL,
+		payload: {
+			modalName,
+			modalProps
+		}
+	});
 
 /**
  * Closes a modal (by removing it from the stack).
