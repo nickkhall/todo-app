@@ -1,3 +1,10 @@
 // Modals
 export const MODAL_CLOSE_MODAL = 'MODAL_CLOSE_MODAL';
 export const MODAL_SET_MODAL = 'MODAL_SET_MODAL';
+
+// Todos
+export const TODOS_GET = 'TODOS_GET_TODOS';
+export const TODOS_GET_TODO = 'TODOS_GET_TODO';
+export const TODOS_CREATE_TODO = 'TODOS_CREATE_TODO';
+export const TODOS_UPDATE_TODO = 'TODOS_UPDATE_TODO';
+export const TODOS_DELETE_TODO = 'TODOS_DELETE_TODO';

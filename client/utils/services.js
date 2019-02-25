@@ -20,14 +20,13 @@ export const defaultCatch = (endPoint, source = 'services') => (e) => {
 export const makeRequest = (url, method, payload) => axios({
   method,
   url,
-  ...(
-    payload ? { data: payload } : {}
-  )
+  ...(payload ? { data: payload } : {})
 })
   .then((res) => {
     if (res && (res.status >= 200 || res.status < 400)) {
       return res;
     }
+    console.log('make request was successful');
     throw new Error(API_ERRORS.BAD_REQUEST);
   })
   .then((res) => {

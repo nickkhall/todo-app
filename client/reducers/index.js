@@ -1,11 +1,14 @@
 import modalsReducer, { initialState as initialModalsState } from './Modals';
+import todosReducer, { initialState as initialTodosState } from './Todos';
 
 export const initialStates = {
-  modalsReducer: initialModalsState
+  modalsReducer: initialModalsState,
+	todosReducer: initialTodosState
 };
 
 const reducers = {
-  modalsReducer
+  modalsReducer,
+	todosReducer
 };
 
 export default reducers;
