@@ -23,15 +23,34 @@ const mockTodos = {
   ]
 };
 
-const mockOnError = jest.fn();
-
-/* eslint-disable no-unused-vars */
-// I don't like using this, but it will be removed when I
-// implement Notifications.
-const console = {
-  error: mockOnError
+const mockNotificationSuccessObj = {
+  type: 'NOTIFICATION_ADD',
+  payload: {
+    message: 'success message',
+    type: 'success',
+    id: 'foo'
+  }
 };
 
+const mockNotificationFailureObj = {
+  type: 'NOTIFICATION_ADD',
+  payload: {
+    message: 'error message',
+    type: 'error',
+    id: 'bad'
+  }
+};
+
+// Mock Actions
+const mockNotificationSuccess = () => ({
+  toggleNotification: jest.fn(() => mockNotificationSuccessObj)
+});
+
+const mockNotificationFailure = () => ({
+  toggleNotification: jest.fn(() => mockNotificationFailureObj)
+});
+
+// Mock Services
 const mockServicesSuccess = () => ({
   getTodos: jest.fn(() => Promise.resolve(mockTodos)),
   createTodo: jest.fn(() => Promise.resolve(mockTodos))
@@ -69,8 +88,9 @@ describe('Todo Actions', () => {
 
     it('should throw an error on a bad get all Todos', () => {
       jest.doMock('services/todos', mockServicesFailure);
+      jest.doMock('actions/Notifications', mockNotificationFailure);
       const { getAllTodos } = require('./index');
-      const expected = [];
+      const expected = [mockNotificationFailureObj];
 
       expect.assertions(1);
 
@@ -84,6 +104,7 @@ describe('Todo Actions', () => {
   describe('Creating Todos', () => {
     it('should successfully create a Todo', () => {
       jest.doMock('services/todos', mockServicesSuccess);
+      jest.doMock('actions/Notifications', mockNotificationSuccess);
       const { createSingleTodo } = require('./index');
 
       const expected = [
@@ -91,6 +112,7 @@ describe('Todo Actions', () => {
           type: TODOS_CREATE_TODO,
           payload: [mockTodo]
         },
+        mockNotificationSuccessObj,
         {
           type: TODOS_GET_TODOS,
           payload: mockTodos.data
@@ -107,8 +129,9 @@ describe('Todo Actions', () => {
 
     it('should throw an error on a bad create Todo', () => {
       jest.doMock('services/todos', mockServicesFailure);
+      jest.doMock('actions/Notifications', mockNotificationFailure);
       const { createSingleTodo } = require('./index');
-      const expected = [];
+      const expected = [mockNotificationFailureObj];
 
       expect.assertions(1);
 
