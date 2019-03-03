@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CreateTodoForm /> when rendering should render a component matching the snapshot 1`] = `
+<Connect(BaseConfirmModal)
+  autoScrollBodyContent={true}
+  name="MODALS_CREATE_TODO"
+  saveButtonAction={[Function]}
+  saveButtonText="Create"
+  title="Create Todo"
+>
+  <form
+    onSubmit={[Function]}
+  >
+    <TextField
+      className={
+        Object {
+          "width": "100%",
+        }
+      }
+      key="name"
+      label="Name"
+      name="name"
+      onChange={[Function]}
+      required={true}
+      select={false}
+    />
+  </form>
+</Connect(BaseConfirmModal)>
+`;
