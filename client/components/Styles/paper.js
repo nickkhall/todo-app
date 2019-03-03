@@ -3,6 +3,7 @@ const styles = theme => ({
     margin: theme.spacing.unit * 2,
     padding: theme.spacing.unit * 2,
     textAlign: 'center',
+    minWidth: '550px',
     color: theme.palette.text.secondary
   },
   centeredContent: {

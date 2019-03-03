@@ -8,17 +8,20 @@ import {
 import styles from './styles';
 
 // Components
-import CreateTodoForm from './form';
-
-const mockProps = {
-  classes: styles
-};
+import CreateTodoForm from './create';
 
 const mockPreventDefault = jest.fn();
 const mockValue = 'foo';
 const mockEvent = {
   target: { value: mockValue },
   preventDefault: mockPreventDefault
+};
+
+const mockOnCreate = jest.fn();
+
+const mockProps = {
+  classes: styles,
+  onCreate: mockOnCreate
 };
 
 let wrapper;
@@ -40,9 +43,10 @@ describe('<CreateTodoForm />', () => {
     });
 
     it('should handle an onSubmit', () => {
-      // @NOTE: This will be updated after action is added.
+      wrapperInstance.handleOnChange(mockEvent, 'name');
       wrapperInstance.handleOnSubmit(mockEvent);
       expect(mockPreventDefault).toHaveBeenCalled();
+      expect(mockOnCreate).toHaveBeenCalled();
     });
   });
 });

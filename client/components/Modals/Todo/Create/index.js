@@ -1,4 +1,9 @@
+import { withStyles } from '@material-ui/core/styles';
+
 // Components
 import CreateTodoModal from './create';
 
-export default CreateTodoModal;
+// Styles
+import styles from './styles';
+
+export default withStyles(styles)(CreateTodoModal);
