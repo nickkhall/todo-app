@@ -1,8 +1,8 @@
 {
-  "name": "connect-four",
+  "name": "Todo Application",
   "version": "0.0.1",
   "main": "index.js",
-  "description": "A Web version of the common game Connect Four.",
+  "description": "Your average Todo application.",
   "scripts": {
     "start": "webpack-dev-server --colors",
     "test": "yarn run test-eslint; yarn run test-jest:update --verbose --maxWorkers=2",
