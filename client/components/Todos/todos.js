@@ -31,7 +31,7 @@ class Todos extends React.Component {
 
     return (
       <PageWrapper>
-        <CenteredContent className={classes.todos}>
+        <CenteredContent>
           <aside className={classes.todosAside}>
             <Typography variant="display1">Todos</Typography>
             <Button

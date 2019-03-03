@@ -14,8 +14,6 @@ class CreateTodoModal extends React.Component {
   constructor() {
     super();
 
-    /* eslint-disable react/no-unused-state */
-    // Temporary until actions get implemented
     this.state = {
       name: '',
       touched: false
@@ -32,8 +30,6 @@ class CreateTodoModal extends React.Component {
     });
   }
 
-  /* eslint-disable class-methods-use-this */
-  // Temporary until actions get implemented
   handleOnSubmit(e) {
     if (e) {
       e.preventDefault();
