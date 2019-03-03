@@ -2,6 +2,16 @@
 
 exports[`<Main /> component when rendering should render a component matching the snapshot 1`] = `
 <main>
+  <WithStyles(Notification)
+    notifications={
+      Array [
+        Object {
+          "id": "foo",
+          "key": "foo",
+        },
+      ]
+    }
+  />
   <p
     key="One"
   >
