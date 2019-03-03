@@ -1,7 +1,8 @@
 // Services
 import {
   getTodos,
-  createTodo
+  createTodo,
+  deleteTodo
 } from 'services/todos';
 
 // Actions
@@ -9,7 +10,10 @@ import { toggleNotification } from 'actions/Notifications';
 
 // Constants
 import { ERRORS } from 'copy/Global/errors';
-import { TODOS_CREATE_SUCCESS } from 'copy/Global/success';
+import {
+  TODOS_CREATE_SUCCESS,
+  TODOS_DELETE_SUCCESS
+} from 'copy/Global/success';
 
 // Action Types
 import {
@@ -20,7 +24,8 @@ import {
 // Destructured Error messages
 const {
   TODOS_GET_ERROR,
-  TODOS_CREATE_ERROR
+  TODOS_CREATE_ERROR,
+  TODOS_DELETE_ERROR
 } = ERRORS;
 
 /**
@@ -55,3 +60,13 @@ export const createSingleTodo = todo => dispatch =>
     .catch(() =>
       dispatch(toggleNotification(TODOS_CREATE_ERROR, 'error'))
     );
+
+/**
+ * Deletes a single Todo.
+ * @param {string} id The ID of the Todo to be deleted.
+ */
+export const deleteSingleTodo = id => dispatch =>
+  deleteTodo(id)
+    .then(() => dispatch(getAllTodos()))
+    .then(() => dispatch(toggleNotification(TODOS_DELETE_SUCCESS, 'success')))
+    .catch(() => dispatch(toggleNotification(TODOS_DELETE_ERROR, 'error')));

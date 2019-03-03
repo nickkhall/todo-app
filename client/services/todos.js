@@ -17,3 +17,11 @@ export const getTodos = () =>
 export const createTodo = todo =>
   makeRequest('http://localhost:3000/todos', 'POST', todo)
     .catch(defaultCatch('createTodo'));
+
+/**
+ * Deletes a Todo.
+ * @param {string} id The ID of the Todo to be deleted.
+ */
+export const deleteTodo = id =>
+  makeRequest(`http://localhost:3000/todos/${id}`, 'DELETE')
+    .catch(defaultCatch('deleteTodo'));
