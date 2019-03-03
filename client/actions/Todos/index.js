@@ -10,6 +10,10 @@ import {
   TODOS_CREATE_TODO
 } from '../types';
 
+/**
+ * Gets all Todos.
+ * @returns {!Promise} An Promise containing of all the Todos.
+ */
 export const getAllTodos = () => dispatch =>
   getTodos()
     .then(res => res.data)
@@ -24,6 +28,11 @@ export const getAllTodos = () => dispatch =>
       /* eslint-enable */
     });
 
+/**
+ * Creates a Todo.
+ * @param {!Object} todo The todo to be created.
+ * @return {!Promise} A promise containing the newly created Todo.
+ */
 export const createSingleTodo = todo => dispatch =>
   createTodo(todo)
     .then(res => res.data)

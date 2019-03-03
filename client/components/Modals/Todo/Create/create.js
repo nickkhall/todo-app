@@ -35,7 +35,9 @@ class CreateTodoModal extends React.Component {
   /* eslint-disable class-methods-use-this */
   // Temporary until actions get implemented
   handleOnSubmit(e) {
-    e.preventDefault();
+    if (e) {
+      e.preventDefault();
+    }
 
     const { onCreate } = this.props;
     const { touched } = this.state;
