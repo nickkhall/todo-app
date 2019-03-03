@@ -16,7 +16,7 @@ class CreateTodoForm extends React.Component {
       name: ''
     };
 
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleOnSubmit = this.handleOnSubmit.bind(this);
     this.handleOnChange = this.handleOnChange.bind(this);
   }
 
@@ -28,7 +28,7 @@ class CreateTodoForm extends React.Component {
 
   /* eslint-disable class-methods-use-this */
   // Temporary until actions get implemented
-  handleSubmit(e) {
+  handleOnSubmit(e) {
     e.preventDefault();
     // @TODO: Create && implement Action for creating Todo.
   }
@@ -37,7 +37,7 @@ class CreateTodoForm extends React.Component {
     const { classes } = this.props;
 
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={this.handleOnSubmit}>
         {
           FormFields.map(f => (
             <TextField
