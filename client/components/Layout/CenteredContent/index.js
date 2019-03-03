@@ -8,11 +8,11 @@ import styles from 'components/Styles/paper';
 import Paper from '@material-ui/core/Paper';
 
 const CenteredContent = ({ children, classes }) => (
-	<div className={classes.centeredContent}>
-		<Paper className={classes.paperDefault}>
-			{children}
-		</Paper>
-	</div>
+  <div className={classes.centeredContent}>
+    <Paper className={classes.paperDefault}>
+      {children}
+    </Paper>
+  </div>
 );
 
 export default withStyles(styles)(CenteredContent);

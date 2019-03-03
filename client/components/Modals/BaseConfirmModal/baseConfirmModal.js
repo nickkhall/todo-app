@@ -5,11 +5,11 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 
 // Components
-import BaseModal from 'components/Modals/baseModal';
 import SaveButton from 'components/Common/Buttons/saveButton';
 import CancelButton from 'components/Common/Buttons/cancelButton';
 
 // Base Modal
+import BaseModal from 'components/Modals/BaseModal';
 
 const handleButtonEvent = (onCancel, buttonAction) => {
   if (buttonAction) {
@@ -26,6 +26,7 @@ const BaseConfirmModal = ({
   saveButtonAction,
   children,
   title,
+  saveButtonText,
   ...ModalProps
 }) => (
   <BaseModal
@@ -37,7 +38,10 @@ const BaseConfirmModal = ({
     </DialogContent>
     <DialogActions>
       <CancelButton action={() => handleButtonEvent(onCancel, cancelButtonAction)} />
-      <SaveButton action={() => handleButtonEvent(onCancel, saveButtonAction)} />
+      <SaveButton
+        action={() => handleButtonEvent(onCancel, saveButtonAction)}
+        text={saveButtonText}
+      />
     </DialogActions>
   </BaseModal>
 );

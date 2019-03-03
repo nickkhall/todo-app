@@ -2,35 +2,55 @@ import React from 'react';
 
 // MUI Components
 import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
 
 // Components
 import PageWrapper from 'components/PageWrapper';
 import CenteredContent from 'components/Layout/CenteredContent';
 import Loader from 'components/Loading';
 import Todo from 'components/Todo';
+import CreateTodoModal from 'components/Modals/Todo/Create';
+import NoTodos from './noTodos';
 
 class Todos extends React.Component {
-	componentDidMount() {
-	  if (!this.props.todos) {
-			this.props.onLoad();
-		}
-	}
+  componentDidMount() {
+    const { onLoad, todos } = this.props;
+    if (!todos) {
+      onLoad();
+    }
+  }
 
-	render () {
-		const { todos } = this.props; 
-		if (!todos) return <Loader />
+  render() {
+    const {
+      classes,
+      todos,
+      onCreateClick
+    } = this.props;
 
-		return (
-			<PageWrapper>
-				<CenteredContent>
-					<Typography variant="display1">Todos</Typography>
-					{
-						todos.map(t => <Todo key={t.id} {...t} />)
-					}
-				</CenteredContent>
-			</PageWrapper>
-		);
-	}
-};
+    if (!todos) return <Loader />;
+
+    return (
+      <PageWrapper>
+        <CenteredContent>
+          <aside className={classes.todosAside}>
+            <Typography variant="display1">Todos</Typography>
+            <Button
+              className={classes.btn}
+              onClick={onCreateClick}
+            >
+                Create
+            </Button>
+          </aside>
+          {
+            todos.length
+              ? todos.map(t => <Todo key={t.id} {...t} />)
+              : <NoTodos />
+          }
+        </CenteredContent>
+        <CreateTodoModal />
+      </PageWrapper>
+    );
+  }
+}
 
 export default Todos;
