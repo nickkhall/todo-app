@@ -1,19 +1,19 @@
 import React from 'react';
 
-// MUI Components
-import Button from '@material-ui/core/Button';
-
 // Component Styles
 import buttons from 'components/Styles/buttons';
 
+// Components
+import CommonButton from './commonButton';
+
 const CancelButton = ({ action, disabled = false, extraStyles = {} }) => (
-  <Button
+  <CommonButton
     type={buttons.secondary}
+    text="Cancel"
     action={action}
     disabled={disabled}
-  >
-		Cancel
-	</Button>
+    extraStyles={extraStyles}
+  />
 );
 
 export default CancelButton;

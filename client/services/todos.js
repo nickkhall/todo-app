@@ -6,6 +6,5 @@ import { makeRequest, defaultCatch } from 'utils/services';
  * @return {!Promise} A promise containing all Todos.
  */
 export const getTodos = () =>
-	makeRequest('http://localhost:3000/todos', 'GET')
-		.catch(defaultCatch('getTodos'));
-
+  makeRequest('http://localhost:3000/todos', 'GET')
+    .catch(defaultCatch('getTodos'));

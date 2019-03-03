@@ -1,11 +1,9 @@
 export default {
-	todosAside: {
-		display: 'flex',
-		justifyContent: 'flex-end'
-	},
-	todosAsideContent: {
-		display: 'flex',
-		justifyContent: 'space-between',
-		width: '58%'
-	}	
+  todosAside: {
+    display: 'flex',
+    justifyContent: 'space-between'
+  },
+  noTodos: {
+    padding: '20px 0'
+  }
 };

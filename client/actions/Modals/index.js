@@ -10,14 +10,13 @@ import {
  * @param {string} modalName The name of the modal to set.
  * @param {!Object} modalProps The props to pass through the modal being set.
  */
-export const setModal = (modalName, modalProps) => dispatch =>
-	dispatch({
-		type: MODAL_SET_MODAL,
-		payload: {
-			modalName,
-			modalProps
-		}
-	});
+export const setModal = (modalName, modalProps) => dispatch => dispatch({
+  type: MODAL_SET_MODAL,
+  payload: {
+    modalName,
+    modalProps
+  }
+});
 
 /**
  * Closes a modal (by removing it from the stack).

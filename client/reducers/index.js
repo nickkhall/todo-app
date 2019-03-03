@@ -3,12 +3,12 @@ import todosReducer, { initialState as initialTodosState } from './Todos';
 
 export const initialStates = {
   modalsReducer: initialModalsState,
-	todosReducer: initialTodosState
+  todosReducer: initialTodosState
 };
 
 const reducers = {
   modalsReducer,
-	todosReducer
+  todosReducer
 };
 
 export default reducers;

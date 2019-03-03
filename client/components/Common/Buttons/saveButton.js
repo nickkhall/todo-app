@@ -3,8 +3,8 @@ import React from 'react';
 // MUI Colors
 import red from '@material-ui/core/colors/red';
 
-// MUI Components
-import Button from '@material-ui/core/Button';
+// Material UI Components
+import CommonButton from './commonButton';
 
 const SaveButton = ({
   text = 'Save',
@@ -12,15 +12,17 @@ const SaveButton = ({
   disabled = false,
   className
 }) => (
-  <Button
+  <CommonButton
     type="submit"
     text={text}
     action={action}
     disabled={disabled}
     className={className}
-  >
-		{ text }
-	</Button>
+    extraStyles={{
+      background: red[500],
+      color: '#FFF'
+    }}
+  />
 );
 
 export default SaveButton;
