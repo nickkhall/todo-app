@@ -5,7 +5,15 @@ import Card from '@material-ui/core/Card';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 
-const Todo = ({ classes, name, completed }) => {
+// Utils
+import { getPrettyDate } from 'utils/dates';
+
+const Todo = ({
+  classes,
+  name,
+  completed,
+  createdAt
+}) => {
   const completedClass = completed ? 'completed' : 'incomplete';
   return (
     <Card className={classes.todo}>
@@ -18,11 +26,14 @@ const Todo = ({ classes, name, completed }) => {
       </Typography>
       <Divider />
       <div>
-        <Typography variant="caption">Completed: </Typography>
-        <Typography variant="caption" className={classes[completedClass]}>
+        <Typography variant="body">Completed: </Typography>
+        <Typography variant="body" className={classes[completedClass]}>
           { completed ? 'Yes' : 'No' }
         </Typography>
       </div>
+      <Typography variant="caption">
+        Created At: { getPrettyDate(createdAt) }
+      </Typography>
     </Card>
   );
 };

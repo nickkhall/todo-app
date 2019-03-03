@@ -34,6 +34,7 @@
     "no-extra-boolean-cast": 0,
     "dependencies/no-cycles": 1,
     implicit-arrow-linebreak: 0,
+     react/jsx-one-expression-per-line: 0,
     "max-len": ['error', 100, 2, {
       "ignoreUrls": true,
       "ignoreComments": false,

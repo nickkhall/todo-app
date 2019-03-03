@@ -15,6 +15,9 @@ export default {
     '& span': {
       display: 'inline-block',
       margin: '0 5px'
+    },
+    '&:hover': {
+      background: grey[300]
     }
   },
   todoTitle: {
