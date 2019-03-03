@@ -1,7 +1,15 @@
 import React from 'react';
 
-const Main = ({ children, classes }) => (
+// Components
+import Notification from 'components/Notifications';
+
+const Main = ({
+  children,
+  classes,
+  notifications
+}) => (
   <main className={classes.main}>
+    <Notification notifications={notifications} />
     { children }
   </main>
 );

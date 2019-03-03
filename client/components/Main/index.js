@@ -1,3 +1,5 @@
+import { connect } from 'react-redux';
+
 // React Router
 import { withRouter } from 'react-router-dom';
 
@@ -10,6 +12,10 @@ import Main from './main';
 // Local styles
 import styles from './styles';
 
+const mapStateToProps = state => ({
+  notifications: state.notificationsReducer.notifications
+});
+
 export default withRouter(
-  withStyles(styles)(Main)
+  connect(mapStateToProps, null)(withStyles(styles)(Main))
 );

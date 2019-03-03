@@ -4,11 +4,24 @@ import {
   createTodo
 } from 'services/todos';
 
+// Actions
+import { toggleNotification } from 'actions/Notifications';
+
+// Constants
+import { ERRORS } from 'copy/Global/errors';
+import { TODOS_CREATE_SUCCESS } from 'copy/Global/success';
+
 // Action Types
 import {
   TODOS_GET_TODOS,
   TODOS_CREATE_TODO
 } from '../types';
+
+// Destructured Error messages
+const {
+  TODOS_GET_ERROR,
+  TODOS_CREATE_ERROR
+} = ERRORS;
 
 /**
  * Gets all Todos.
@@ -21,12 +34,9 @@ export const getAllTodos = () => dispatch =>
       type: TODOS_GET_TODOS,
       payload: todos
     }))
-    .catch((err) => {
-      // @TODO: Implement Notifications
-      /* eslint-disable no-console */
-      console.error(err); // Temporary
-      /* eslint-enable */
-    });
+    .catch(() =>
+      dispatch(toggleNotification(TODOS_GET_ERROR, 'error'))
+    );
 
 /**
  * Creates a Todo.
@@ -40,8 +50,8 @@ export const createSingleTodo = todo => dispatch =>
       type: TODOS_CREATE_TODO,
       payload: newTodo
     }))
+    .then(() => dispatch(toggleNotification(`${TODOS_CREATE_SUCCESS} ${todo.name}`, 'success')))
     .then(() => dispatch(getAllTodos()))
-    .catch((err) => {
-      // @NOTE: Temporary until I add Notifications.
-      console.error(err);
-    });
+    .catch(() =>
+      dispatch(toggleNotification(TODOS_CREATE_ERROR, 'error'))
+    );

@@ -4,6 +4,7 @@ export default () => ({
     display: 'flex',
     maxWidth: '100%',
     margin: 'auto',
-    textAlign: 'center'
+    textAlign: 'center',
+    maxHeight: '100%'
   }
 });

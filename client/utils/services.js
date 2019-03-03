@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 // Errors
-import { API_ERRORS } from 'copy/Global/errors';
+import { ERRORS } from 'copy/Global/errors';
 
 export const defaultCatch = (endPoint, source = 'services') => (e) => {
   console.error(`${source}/${endPoint}`, e);
@@ -26,8 +26,8 @@ export const makeRequest = (url, method, payload) => axios({
     if (res && (res.status >= 200 || res.status < 400)) {
       return res;
     }
-    console.log('make request was successful');
-    throw new Error(API_ERRORS.BAD_REQUEST);
+
+    throw new Error(ERRORS.BAD_REQUEST);
   })
   .then((res) => {
     if ('location' in res.headers) {

@@ -4,6 +4,8 @@ const styles = theme => ({
     padding: theme.spacing.unit * 2,
     textAlign: 'center',
     minWidth: '550px',
+    maxHeight: '100%',
+    overflow: 'auto',
     color: theme.palette.text.secondary
   },
   centeredContent: {
