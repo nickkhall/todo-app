@@ -19,11 +19,7 @@ const mockTodo = {
 };
 const mockTodos = {
   data: [
-    mockTodo,
-    {
-      ...mockTodo,
-      name: 'foobaz'
-    }
+    mockTodo
   ]
 };
 
@@ -38,7 +34,7 @@ const console = {
 
 const mockServicesSuccess = () => ({
   getTodos: jest.fn(() => Promise.resolve(mockTodos)),
-  createTodo: jest.fn(() => Promise.resolve(mockTodo))
+  createTodo: jest.fn(() => Promise.resolve(mockTodos))
 });
 
 const mockServicesFailure = () => ({
@@ -93,7 +89,7 @@ describe('Todo Actions', () => {
       const expected = [
         {
           type: TODOS_CREATE_TODO,
-          payload: mockTodo
+          payload: [mockTodo]
         },
         {
           type: TODOS_GET_TODOS,
