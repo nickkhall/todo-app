@@ -1,13 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<DeleteTodoModal /> when rendering should render a component matching the snapshot 1`] = `
-<Connect(BaseConfirmModal)
-  name="MODALS_DELETE_TODO"
-  saveButtonText="Delete"
-  title="Confirm Todo Deletion"
->
-  Are you sure you want to delete 
-  foobar
-  ?
-</Connect(BaseConfirmModal)>
-`;
+exports[`<DeleteTodoModal /> when rendering should render a component matching the snapshot 1`] = `""`;
