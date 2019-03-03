@@ -7,24 +7,26 @@ export default {
   todo: {
     background: grey[100],
     display: 'flex',
-    justifyContent: 'center',
     flexDirection: 'column',
-    padding: '20px',
+    justifyContent: 'center',
     margin: '10px 0',
+    padding: '20px',
+    width: '100%',
     '& > *': { margin: '5px 0' },
     '& span': {
       display: 'inline-block',
       margin: '0 5px'
     },
     '&:hover': {
-      background: grey[300]
+      background: grey[300],
+      cursor: 'pointer'
     }
   },
   todoTitle: {
-    textOverflow: 'ellipsis',
+    maxWidth: '550px',
     overflow: 'hidden',
-    whiteSpace: 'nowrap',
-    maxWidth: '550px'
+    textOverflow: 'ellipsis',
+    whiteSpace: 'nowrap'
   },
   completed: {
     color: green[500]

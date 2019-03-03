@@ -6,7 +6,7 @@ export default {
   btn: {
     background: red[500],
     color: '#fff',
-    margin: '0 5px',
+    margin: '0',
     '&:hover': {
       background: red[700]
     }

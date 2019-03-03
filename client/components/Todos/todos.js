@@ -3,6 +3,7 @@ import React from 'react';
 // MUI Components
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+import Icon from '@material-ui/core/Icon';
 
 // Components
 import PageWrapper from 'components/PageWrapper';
@@ -10,6 +11,7 @@ import CenteredContent from 'components/Layout/CenteredContent';
 import Loader from 'components/Loading';
 import Todo from 'components/Todo';
 import CreateTodoModal from 'components/Modals/Todo/Create';
+import DeleteTodoModal from 'components/Modals/Todo/Delete';
 import NoTodos from './noTodos';
 
 class Todos extends React.Component {
@@ -43,11 +45,17 @@ class Todos extends React.Component {
           </aside>
           {
             todos.length
-              ? todos.map(t => <Todo key={t.id} {...t} />)
+              ? todos.map(t => (
+                <div className={classes.todoContainer}>
+                  <Todo key={t.id} {...t} />
+                  <Icon className={classes.todoDelete}>delete_forever</Icon>
+                </div>
+              ))
               : <NoTodos />
           }
         </CenteredContent>
         <CreateTodoModal />
+        <DeleteTodoModal />
       </PageWrapper>
     );
   }
