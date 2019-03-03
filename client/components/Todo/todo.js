@@ -26,13 +26,13 @@ const Todo = ({
       </Typography>
       <Divider />
       <div>
-        <Typography variant="body">Completed: </Typography>
-        <Typography variant="body" className={classes[completedClass]}>
+        <Typography variant="button">Completed: </Typography>
+        <Typography variant="button" className={classes[completedClass]}>
           { completed ? 'Yes' : 'No' }
         </Typography>
       </div>
       <Typography variant="caption">
-        Created At: { getPrettyDate(createdAt) }
+        Created: { getPrettyDate(createdAt) }
       </Typography>
     </Card>
   );

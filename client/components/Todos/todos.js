@@ -26,7 +26,8 @@ class Todos extends React.Component {
     const {
       classes,
       todos,
-      onCreateClick
+      onCreateClick,
+      onDeleteClick
     } = this.props;
 
     if (!todos) return <Loader />;
@@ -46,9 +47,14 @@ class Todos extends React.Component {
           {
             todos.length
               ? todos.map(t => (
-                <div className={classes.todoContainer}>
-                  <Todo key={t.id} {...t} />
-                  <Icon className={classes.todoDelete}>delete_forever</Icon>
+                <div className={classes.todoContainer} key={t.id}>
+                  <Todo {...t} />
+                  <Icon
+                    className={classes.todoDelete}
+                    onClick={() => onDeleteClick(t)}
+                  >
+                    delete_forever
+                  </Icon>
                 </div>
               ))
               : <NoTodos />

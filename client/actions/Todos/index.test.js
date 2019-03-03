@@ -5,7 +5,8 @@ import thunk from 'redux-thunk';
 // Action Types
 import {
   TODOS_GET_TODOS,
-  TODOS_CREATE_TODO
+  TODOS_CREATE_TODO,
+  TODOS_SET_CUR_TODO
 } from 'actions/types';
 
 const middlewares = [thunk];
@@ -53,12 +54,14 @@ const mockNotificationFailure = () => ({
 // Mock Services
 const mockServicesSuccess = () => ({
   getTodos: jest.fn(() => Promise.resolve(mockTodos)),
-  createTodo: jest.fn(() => Promise.resolve(mockTodos))
+  createTodo: jest.fn(() => Promise.resolve(mockTodos)),
+  deleteTodo: jest.fn(() => Promise.resolve({}))
 });
 
 const mockServicesFailure = () => ({
   getTodos: jest.fn(() => Promise.reject()),
-  createTodo: jest.fn(() => Promise.reject())
+  createTodo: jest.fn(() => Promise.reject()),
+  deleteTodo: jest.fn(() => Promise.reject())
 });
 
 let store;
@@ -139,6 +142,70 @@ describe('Todo Actions', () => {
         .then(() => {
           expect(store.getActions()).toEqual(expected);
         });
+    });
+  });
+
+  describe('Deleting Todos', () => {
+    it('should successfully delete a Todo', () => {
+      jest.doMock('services/todos', mockServicesSuccess);
+      jest.doMock('actions/Notifications', mockNotificationSuccess);
+      const { deleteSingleTodo } = require('./index');
+
+      const expected = [
+        {
+          type: TODOS_GET_TODOS,
+          payload: mockTodos.data
+        },
+        mockNotificationSuccessObj
+      ];
+
+      store = mockStore({
+        todosReducer: {
+          currentTodo: mockTodo
+        }
+      });
+
+      expect.assertions(1);
+
+      return store.dispatch(deleteSingleTodo())
+        .then(() => {
+          expect(store.getActions()).toEqual(expected);
+        });
+    });
+
+    it('should throw an error on a bad delete Todo', () => {
+      jest.doMock('services/todos', mockServicesFailure);
+      jest.doMock('actions/Notifications', mockNotificationFailure);
+      const { deleteSingleTodo } = require('./index');
+      const expected = [mockNotificationFailureObj];
+
+      store = mockStore({
+        todosReducer: {
+          currentTodo: mockTodo
+        }
+      });
+
+      expect.assertions(1);
+
+      return store.dispatch(deleteSingleTodo())
+        .then(() => {
+          expect(store.getActions()).toEqual(expected);
+        });
+    });
+  });
+
+  describe('Setting Todos', () => {
+    it('should successfull set a current Todo', () => {
+      const { setCurrentTodo } = require('./index');
+      const expected = [
+        {
+          type: TODOS_SET_CUR_TODO,
+          payload: mockTodo
+        }
+      ];
+
+      store.dispatch(setCurrentTodo(mockTodo));
+      expect(store.getActions()).toEqual(expected);
     });
   });
 });
