@@ -1,5 +1,5 @@
 {
-  "name": "Todo Application",
+  "name": "Todo-Application",
   "version": "0.0.1",
   "main": "index.js",
   "description": "Your average Todo application.",
@@ -17,7 +17,8 @@
   "jest": {
     "collectCoverageFrom": [
       "{client,modules}/**/*.{js,jsx}",
-      "!client/**/{style,styles}\\.js"
+      "!client/**/{style,styles}\\.js",
+      "!client/**/index.js"
     ],
     "moduleNameMapper": {
       "\\.(css|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/client/assetsTransformer.js"

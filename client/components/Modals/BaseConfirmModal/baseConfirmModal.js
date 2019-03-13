@@ -37,10 +37,14 @@ const BaseConfirmModal = ({
       {children}
     </DialogContent>
     <DialogActions>
-      <CancelButton action={() => handleButtonEvent(onCancel, cancelButtonAction)} />
+      <CancelButton
+        action={() => handleButtonEvent(onCancel, cancelButtonAction)}
+        name="cancelButton"
+      />
       <SaveButton
         action={() => handleButtonEvent(onCancel, saveButtonAction)}
         text={saveButtonText}
+        name="saveButton"
       />
     </DialogActions>
   </BaseModal>
